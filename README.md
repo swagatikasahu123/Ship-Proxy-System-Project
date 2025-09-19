@@ -1,6 +1,3 @@
-Perfect! Based on the **commands you actually used for testing**, here’s a **README.md tailored to your assignment**:
-
-```markdown
 # Ship Proxy System
 
 This project demonstrates a **Python client-server setup using Docker**, where the client acts as an HTTP proxy and the server handles backend logic.  
@@ -11,18 +8,17 @@ The client forwards requests from users to external websites and returns the res
 
 ## Project Structure
 
-```
-
 ship-proxy-system/
 ├── client/
-│   ├── client.py
-│   └── Dockerfile
+│ ├── client.py
+│ └── Dockerfile
 ├── server/
-│   ├── server.py
-│   └── Dockerfile
+│ ├── server.py
+│ └── Dockerfile
 └── docker-compose.yml
 
-````
+yaml
+Copy code
 
 - **client/**: Client proxy code, exposes port `8080`.  
 - **server/**: Backend server code, exposes port `9999`.  
@@ -50,75 +46,59 @@ ship-proxy-system/
 
 ```powershell
 docker-compose up
-````
+Starts both server and client containers.
 
-* Starts both **server** and **client** containers.
-* Client accessible at: `http://localhost:8080`
-* Server accessible at: `http://localhost:9999`
+Client accessible at: http://localhost:8080
+
+Server accessible at: http://localhost:9999
 
 Stop containers with:
 
-```powershell
+powershell
+Copy code
 docker-compose down
-```
-
----
-
-### Option 2: Running Containers Individually
-
-```powershell
+Option 2: Running Containers Individually
+powershell
+Copy code
 docker run -p 9999:9999 swagatika957/server:latest
 docker run -p 8080:8080 swagatika957/client:latest
-```
+Ensure the server container is running before starting the client.
 
-> Ensure the **server container** is running before starting the client.
+Testing the Proxy
+Example curl.exe commands (Windows)
+GET request:
 
----
-
-## Testing the Proxy
-
-### Example `curl.exe` commands (Windows)
-
-* **GET request**:
-
-```powershell
+powershell
+Copy code
 curl.exe -x http://localhost:8080 http://httpforever.com/
 curl.exe -x http://localhost:8080 https://example.com/
-```
+POST request:
 
-* **POST request**:
-
-```powershell
+powershell
+Copy code
 curl.exe -x http://localhost:8080 -X POST -d "hello=world" https://httpbin.org/post
-```
+PUT request:
 
-* **PUT request**:
-
-```powershell
+powershell
+Copy code
 curl.exe -x http://localhost:8080 -X PUT -d "update=test" https://httpbin.org/put
-```
+DELETE request:
 
-* **DELETE request**:
-
-```powershell
+powershell
+Copy code
 curl.exe -x http://localhost:8080 -X DELETE https://httpbin.org/delete
-```
+Delayed response test:
 
-* **Delayed response test**:
-
-```powershell
+powershell
+Copy code
 curl.exe -x http://localhost:8080 https://httpbin.org/delay/3
-```
+These tests confirm that the client proxy supports all HTTP methods and handles multiple requests consistently.
 
-> These tests confirm that the client proxy supports **all HTTP methods** and handles multiple requests consistently.
+Author
+GitHub: swagatika957
 
----
-
-## Author
-
-* GitHub: [swagatika957](https://github.com/swagatika957)
-
-```
+yaml
+Copy code
 
 ---
 
@@ -127,4 +107,16 @@ This README now **matches exactly the way you tested your proxy** and clearly sh
 If you want, I can also **add a simple diagram showing client ↔ server ↔ internet flow** to make it even more submission-ready.  
 
 Do you want me to add the diagram?
-```
+
+
+
+
+
+
+
+Ask ChatGPT
+
+
+
+
+
